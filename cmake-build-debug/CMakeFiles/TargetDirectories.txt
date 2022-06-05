@@ -1,0 +1,3 @@
+C:/Users/allti/OneDrive/Pulpit/STUDIA/SEMESTR 4/ZADANIE4_Andy/cmake-build-debug/CMakeFiles/ZADANIE4_Andy.dir
+C:/Users/allti/OneDrive/Pulpit/STUDIA/SEMESTR 4/ZADANIE4_Andy/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/allti/OneDrive/Pulpit/STUDIA/SEMESTR 4/ZADANIE4_Andy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
