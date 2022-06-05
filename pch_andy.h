@@ -5,4 +5,8 @@
 #ifndef ZADANIE4_ANDY_PCH_ANDY_H
 #define ZADANIE4_ANDY_PCH_ANDY_H
 
+
+// tu pisac kod
+
+
 #endif //ZADANIE4_ANDY_PCH_ANDY_H
