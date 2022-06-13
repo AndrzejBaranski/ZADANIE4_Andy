@@ -1,6 +1,7 @@
 #include <iostream>
-#include "dataFiles.h"
+#include "createFile.h"
 #include "BEERCALCULATION.h"
+
 int main() {
     createFilesForTest_1();
     createFilesForTest_2();
