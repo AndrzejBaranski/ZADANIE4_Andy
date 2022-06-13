@@ -1,6 +1,7 @@
 #include "pch_andy.h"
 #include "BEERCALCULATION.h"
 #include "createFile.h"
+#include "printResult.h"
 
 /*struct berResults
 {
@@ -14,7 +15,7 @@
 uint8_t hammingDistance(uint8_t n1, uint8_t n2);
 void createFile1(const std::string name, const int count, const char value);
 berResults calculateBer(std::string fpath1, std::string fpath2);
-void printResult(berResults results);*/
+*/
 
 int main(int argc, char * argv[])
 {
@@ -57,13 +58,3 @@ int main(int argc, char * argv[])
 }
 
 
-void printResult(berResults results)
-{
-    std::stringstream message;
-    message << "Results are: " << std::endl;
-    message << "BER: " << results.ber << std::endl;
-    message << "Tot: " << results.tot << std::endl;
-    message << "Err: " << results.err << std::endl;
-    message << "Calc time: " << ((float)results.t2 - results.t1) / CLOCKS_PER_SEC << " sec " << std::endl;
-    saveLog(message.str());
-}
