@@ -2,7 +2,7 @@
 // Created by allti on 13.06.2022.
 //
 
-#include "BER_computer.h"
+#include "HAMMINGDISTANCE.h"
 
 using namespace std;
 
