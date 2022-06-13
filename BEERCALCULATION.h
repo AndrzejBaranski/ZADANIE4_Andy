@@ -2,8 +2,8 @@
 // Created by allti on 13.06.2022.
 //
 
-#ifndef BER_KALKULATOR_CALCULATERESULLT_H
-#define BER_KALKULATOR_CALCULATERESULLT_H
+#ifndef ZADANIE4_Andy_BEERCALCULATION_H
+#define ZADANIE4_Andy_BEERCALCULATION_H
 
 #include <string>
 #include <vector>
@@ -22,5 +22,5 @@ void test_1();
 void test_2();
 void test_3();
 
-#endif //BER_KALKULATOR_CALCULATERESULLT_H
+#endif //ZADANIE4_Andy_BEERCALCULATION_H
 
