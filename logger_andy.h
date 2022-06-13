@@ -5,4 +5,8 @@
 #ifndef ZADANIE4_ANDY_LOGGER_ANDY_H
 #define ZADANIE4_ANDY_LOGGER_ANDY_H
 
+void    openLog(std::string fileName);
+void    saveLog(std::string msg);
+void    closeLog(void);
+
 #endif //ZADANIE4_ANDY_LOGGER_ANDY_H

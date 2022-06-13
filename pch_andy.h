@@ -5,8 +5,10 @@
 #ifndef ZADANIE4_ANDY_PCH_ANDY_H
 #define ZADANIE4_ANDY_PCH_ANDY_H
 
-
-// tu pisac kod
-
+#pragma once
+#include <iostream>
+#include <fstream>
+#include "logger_andy.h"
+#include <sstream>
 
 #endif //ZADANIE4_ANDY_PCH_ANDY_H
