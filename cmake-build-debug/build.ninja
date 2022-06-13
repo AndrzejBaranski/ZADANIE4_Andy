@@ -73,6 +73,12 @@ build CMakeFiles/ZADANIE4_Andy.dir/BEERCALCULATION.cpp.obj: CXX_COMPILER__ZADANI
   OBJECT_DIR = CMakeFiles\ZADANIE4_Andy.dir
   OBJECT_FILE_DIR = CMakeFiles\ZADANIE4_Andy.dir
 
+build CMakeFiles/ZADANIE4_Andy.dir/HAMMINGDISTANCE.cpp.obj: CXX_COMPILER__ZADANIE4_Andy_Debug C$:/Users/allti/OneDrive/Pulpit/STUDIA/SEMESTR$ 4/ZADANIE4_Andy/HAMMINGDISTANCE.cpp || cmake_object_order_depends_target_ZADANIE4_Andy
+  DEP_FILE = CMakeFiles\ZADANIE4_Andy.dir\HAMMINGDISTANCE.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\ZADANIE4_Andy.dir
+  OBJECT_FILE_DIR = CMakeFiles\ZADANIE4_Andy.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ZADANIE4_Andy
@@ -81,7 +87,7 @@ build CMakeFiles/ZADANIE4_Andy.dir/BEERCALCULATION.cpp.obj: CXX_COMPILER__ZADANI
 #############################################
 # Link the executable ZADANIE4_Andy.exe
 
-build ZADANIE4_Andy.exe: CXX_EXECUTABLE_LINKER__ZADANIE4_Andy_Debug CMakeFiles/ZADANIE4_Andy.dir/main.cpp.obj CMakeFiles/ZADANIE4_Andy.dir/logger_andy.cpp.obj CMakeFiles/ZADANIE4_Andy.dir/pch_andy.cpp.obj CMakeFiles/ZADANIE4_Andy.dir/BEERCALCULATION.cpp.obj
+build ZADANIE4_Andy.exe: CXX_EXECUTABLE_LINKER__ZADANIE4_Andy_Debug CMakeFiles/ZADANIE4_Andy.dir/main.cpp.obj CMakeFiles/ZADANIE4_Andy.dir/logger_andy.cpp.obj CMakeFiles/ZADANIE4_Andy.dir/pch_andy.cpp.obj CMakeFiles/ZADANIE4_Andy.dir/BEERCALCULATION.cpp.obj CMakeFiles/ZADANIE4_Andy.dir/HAMMINGDISTANCE.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ZADANIE4_Andy.dir
