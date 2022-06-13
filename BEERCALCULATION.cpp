@@ -2,9 +2,9 @@
 // Created by allti on 13.06.2022.
 //
 #include <iostream>
-#include "calculateResullt.h"
+#include "BEERCALCULATION.h"
 #include <fstream>
-#include "BER_computer.h"
+#include "HAMMINGDISTANCE.h"
 
 
 
