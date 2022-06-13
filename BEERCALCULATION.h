@@ -6,6 +6,7 @@
 #define ZADANIE4_ANDY_BEERCALCULATION_H
 
 #include "pch_andy.h"
+#include "HAMMINGDISTANCE.h"
 
 struct berResults
 {

@@ -1,6 +1,8 @@
 #include "pch_andy.h"
+#include "BEERCALCULATION.h"
+#include "createFile.h"
 
-struct berResults
+/*struct berResults
 {
     double tot; //total number of bits
     double err; //error bits (different bits)
@@ -12,7 +14,7 @@ struct berResults
 uint8_t hammingDistance(uint8_t n1, uint8_t n2);
 void createFile1(const std::string name, const int count, const char value);
 berResults calculateBer(std::string fpath1, std::string fpath2);
-void printResult(berResults results);
+void printResult(berResults results);*/
 
 int main(int argc, char * argv[])
 {
@@ -54,16 +56,6 @@ int main(int argc, char * argv[])
     return 0;
 }
 
-void createFile1(const std::string name, const int count, const char value)
-{
-    std::fstream f;
-    f.open(name.c_str(), std::ios::binary | std::ios::out);
-    for (int i = 0; i < count; i++)
-    {
-        f.write((char*)&value,1);
-    }
-    f.close();
-}
 
 void printResult(berResults results)
 {
