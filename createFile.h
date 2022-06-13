@@ -5,6 +5,12 @@
 #ifndef ZADANIE4_ANDY_CREATEFILE_H
 #define ZADANIE4_ANDY_CREATEFILE_H
 
-void createFile1(const std::string name, const int count, const char value);
+#ifndef BER_KALKULATOR_DATAFILES_H
+#define BER_KALKULATOR_DATAFILES_H
 
-#endif //ZADANIE4_ANDY_CREATEFILE_H
+void createFilesForTest_1();
+void createFilesForTest_2();
+void createFilesForTest_3();
+
+
+#endif //BER_KALKULATOR_DATAFILES_H
