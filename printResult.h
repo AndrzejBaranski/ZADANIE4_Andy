@@ -9,4 +9,4 @@
 
 void printResult(berResults results);
 
-#endif //ZADANIE4_ANDY_PRINTRESULT_H
+#endif ZADANIE4_ANDY_PRINTRESULT_H
