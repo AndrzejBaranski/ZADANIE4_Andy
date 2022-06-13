@@ -2,16 +2,23 @@
 // Created by allti on 13.06.2022.
 //
 
-#include "HAMMINGDISTANCE.h"
+#include "BER_computer.h"
 
-uint8_t hammingDistance(uint8_t n1, uint8_t n2)
+using namespace std;
+
+int calcWrongBits(char A, char B)
 {
-    uint8_t x = n1 ^ n2; // XOR
-    uint8_t setBits = 0;
-    while (x > 0)
-    {
-        setBits += x & 1;
-        x >>= 1;
+// compute number of different bits
+    int numOfBadBits = 0;
+
+    for (int i = 0; i < 8; i++) {
+
+        // right shift both the numbers by 'i' and
+        // check if the bit at the i'th position is different
+        if (((A >> i) & 1) != ((B >> i) & 1)) {
+            numOfBadBits++;
+        }
     }
-    return setBits;
+    return numOfBadBits;
+
 }

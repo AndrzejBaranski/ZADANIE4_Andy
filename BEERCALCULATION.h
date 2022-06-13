@@ -2,21 +2,25 @@
 // Created by allti on 13.06.2022.
 //
 
-#ifndef ZADANIE4_ANDY_BEERCALCULATION_H
-#define ZADANIE4_ANDY_BEERCALCULATION_H
+#ifndef BER_KALKULATOR_CALCULATERESULLT_H
+#define BER_KALKULATOR_CALCULATERESULLT_H
 
-#include "pch_andy.h"
-#include "HAMMINGDISTANCE.h"
+#include <string>
+#include <vector>
+#include <time.h>
 
-struct berResults
+
+struct testData
 {
-    double tot; //total number of bits
-    double err; //error bits (different bits)
-    float ber;  //ber calc result
-    clock_t t1; //calc start time
-    clock_t t2; //calc stop time
+    std::vector<char> data1;
+    std::vector<char> data2;
+    size_t volume;
 };
+testData loadDataFromFile(std::string  path1, std::string  path2);
+std::string timeConverter(int seconds);
+void test_1();
+void test_2();
+void test_3();
 
-berResults calculateBer(std::string fpath1, std::string fpath2);
+#endif //BER_KALKULATOR_CALCULATERESULLT_H
 
-#endif //ZADANIE4_ANDY_BEERCALCULATION_H

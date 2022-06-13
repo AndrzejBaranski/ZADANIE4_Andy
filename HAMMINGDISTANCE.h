@@ -2,11 +2,14 @@
 // Created by allti on 13.06.2022.
 //
 
-#ifndef ZADANIE4_ANDY_HAMMINGDISTANCE_H
-#define ZADANIE4_ANDY_HAMMINGDISTANCE_H
+#ifndef BER_KALKULATOR_BER_COMPUTER_H
+#define BER_KALKULATOR_BER_COMPUTER_H
 
-#include <stdint.h>
+int calcWrongBits(char ch1, char ch2);
 
-uint8_t hammingDistance(uint8_t n1, uint8_t n2);
 
-#endif //ZADANIE4_ANDY_HAMMINGDISTANCE_H
+
+
+
+#endif //BER_KALKULATOR_BER_COMPUTER_H
+

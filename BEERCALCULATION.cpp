@@ -1,39 +1,134 @@
 //
 // Created by allti on 13.06.2022.
 //
-#include "pch_andy.h"
-#include "BEERCALCULATION.h"
+#include <iostream>
+#include "calculateResullt.h"
+#include <fstream>
+#include "BER_computer.h"
 
-berResults calculateBer(std::string fpath1, std::string fpath2)
-{
-    std::fstream f1, f2; //handlers to files
-    berResults results;
-    results.t1 = 0;
-    results.t2 = 0;
-    results.ber = 0;
-    results.err = 0;
-    results.tot = 0;
 
-    saveLog("Calculating BER...");
-    f1.open(fpath1.c_str(), std::ios::binary | std::ios::in);
-    f2.open(fpath2.c_str(), std::ios::binary | std::ios::in);
-    char a = 0x00;
-    char b = 0x00;
-    results.t1 = clock();
 
-    while (!f1.eof())
-    {
-        f1 >> a; //read 1 char from file 1
-        f2 >> b; //read 1 char from file 2
-        if (!f1.eof()) // till the end of the 1st file
-        {
-            results.err += hammingDistance(a, b); //add to the .err the number of different bits
-            results.tot += 8; //add to the .tot the number of compared bits
+using namespace std;
+
+std::string timeConverter(int sec) {
+    string convertedTime{};
+    int hours = sec/3600;
+    int minutes = (sec / 60) % 60;
+    int seconds = sec % 60;
+    convertedTime = to_string(hours)+"hrs " + to_string(minutes)+"min " + to_string(seconds) +"sec";
+    return convertedTime;
+}
+
+testData loadDataFromFile(string  path1, string  path2) {
+    unsigned char num;
+    string path{};
+    bool switcher{true};
+    int counter{0};
+    testData testdat;
+
+    while (switcher) {
+        if (counter==0) path = path1;
+        if (counter==1) path = path2;
+        ifstream file(path, ios::binary | ios::out);
+        if (!file.is_open()) {
+            cout << "Error in opening file." << endl;
+        } else {
+            while (!file.eof()) {
+                if (path == path1 && !file.eof()) {
+                    file.read((char *) &num, sizeof(num));
+                    testdat.data1.push_back(num);
+                } else if (path == path2 && !file.eof()) {
+                    file.read((char *) &num, sizeof(num));
+                    testdat.data2.push_back(num);
+                }
+            }
+            file.close();
         }
+        counter++;
+        if(counter == 2) switcher = false;
     }
+    return testdat;
+}
+void test_1()
+{
+    testData test_1_data;
+    const string s1 = "test_1_1.dat";
+    const string s2 = "test_1_2.dat";
+    char val_1;
+    char val_2;
+    int badBits{0};
+    double BER_value;
+    test_1_data = loadDataFromFile(s1,s2);
+    size_t totalNumOfBits = test_1_data.data1.size() * 2* 8;
+    clock_t time = clock();
+    for (int i = 0; i <  test_1_data.data1.size(); ++i) {
+        val_1 = test_1_data.data1.at(i);
+        val_2 = test_1_data.data2[i];
+        badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
+        BER_value = badBits/(double)totalNumOfBits;
 
-    results.ber = (float)results.err / results.tot; // calculate ber
-    results.t2 = clock();
-    saveLog("BER calculations are done");
-    return results; //return structure with all results
+    }
+    time =(clock() - time);
+    int timeInSeconds = time/CLOCKS_PER_SEC;
+    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
+    cout <<'\n'<<"Number of bad bits in test 1 files : "<< badBits<<endl;
+    cout <<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
+    cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
+    cout  <<"========================================================================="<<endl;
+
+}
+void test_2()
+{
+
+    testData test_2_data;
+    const string s3 = "test_2_1.dat";
+    const string s4 = "test_2_2.dat";
+    char val_1;
+    char val_2;
+    int badBits{0};
+    double BER_value;
+    test_2_data = loadDataFromFile(s3,s4);
+    size_t totalNumOfBits = test_2_data.data1.size() * 2* 8;
+    clock_t time = clock();
+    for (int i = 0; i < 100; ++i) {
+        val_1 = test_2_data.data1[i];
+        val_2 = test_2_data.data2[i];
+        badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
+        BER_value = badBits/(double)totalNumOfBits;
+    }
+    time =(clock() - time);
+    int timeInSeconds = time/CLOCKS_PER_SEC;
+    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
+    cout <<"Number of bad bits in test 2 files : "<< badBits<<endl;
+    cout <<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
+    cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
+    cout << "========================================================================="<<endl;
+
+}
+void test_3()
+{
+    testData test_3_data;
+    const string s5 = "test_3_1.dat";
+    const string s6 = "test_3_2.dat";
+    char val_1;
+    char val_2;
+    int badBits{0};
+    double BER_value;
+    test_3_data = loadDataFromFile(s5,s6);
+    size_t totalNumOfBits = test_3_data.data2.size()*2*8;
+    clock_t time = clock();
+
+    for (int i = 0; i < 400000000; ++i) {
+        val_1 = test_3_data.data1[i];
+        val_2 = test_3_data.data2[i];
+        badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
+        BER_value = badBits/(double)totalNumOfBits;
+    }
+    time =(clock() - time);
+    int timeInSeconds = time/CLOCKS_PER_SEC;
+    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
+    cout <<"Number of bad bits in test 3 files : "<< badBits<<endl;
+    cout <<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
+    cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
+    cout << "========================================================================="<<endl;
 }
