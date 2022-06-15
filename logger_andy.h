@@ -3,7 +3,7 @@
 //
 
 #ifndef ZADANIE4_Andy_LOGGER_ANDY_H
-#define
+#define ZADANIE4_Andy_LOGGER_ANDY_H
 
 #include <iostream>
 #include <fstream>
