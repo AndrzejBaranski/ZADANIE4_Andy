@@ -78,7 +78,7 @@ void test_1()
     cout <<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
     cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout  <<"========================================================================="<<endl;
-    closeLog(void);
+    closeLog();
 }
 void test_2()
 {
@@ -107,7 +107,7 @@ void test_2()
     cout <<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
     cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout << "========================================================================="<<endl;
-    closeLog(void);
+    closeLog();
 }
 void test_3()
 {
@@ -137,6 +137,6 @@ void test_3()
     cout <<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
     cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout << "========================================================================="<<endl;
-    closeLog(void);
+    closeLog();
 }
 
