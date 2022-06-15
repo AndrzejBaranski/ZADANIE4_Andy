@@ -52,6 +52,8 @@ testData loadDataFromFile(string  path1, string  path2) {
 void test_1()
 {
     openLog("test_1_1.dat")
+    openLog("test_1_2.dat")
+
     testData test_1_data;
     const string s1 = "test_1_1.dat";
     const string s2 = "test_1_2.dat";
@@ -76,11 +78,12 @@ void test_1()
     cout <<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
     cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout  <<"========================================================================="<<endl;
-
+    closeLog(void);
 }
 void test_2()
 {
-
+    openLog("test_2_1.dat")
+    openLog("test_2_2.dat")
     testData test_2_data;
     const string s3 = "test_2_1.dat";
     const string s4 = "test_2_2.dat";
@@ -104,10 +107,12 @@ void test_2()
     cout <<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
     cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout << "========================================================================="<<endl;
-
+    closeLog(void);
 }
 void test_3()
 {
+    openLog("test_3_1.dat")
+    openLog("test_3_2.dat")
     testData test_3_data;
     const string s5 = "test_3_1.dat";
     const string s6 = "test_3_2.dat";
@@ -132,4 +137,6 @@ void test_3()
     cout <<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
     cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout << "========================================================================="<<endl;
+    closeLog(void);
 }
+
