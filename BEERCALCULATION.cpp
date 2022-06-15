@@ -5,7 +5,7 @@
 #include "BEERCALCULATION.h"
 #include <fstream>
 #include "HAMMINGDISTANCE.h"
-
+#include "logger_andy.h"
 
 
 using namespace std;
@@ -51,6 +51,7 @@ testData loadDataFromFile(string  path1, string  path2) {
 }
 void test_1()
 {
+    openLog("test_1_1.dat")
     testData test_1_data;
     const string s1 = "test_1_1.dat";
     const string s2 = "test_1_2.dat";
