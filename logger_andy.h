@@ -3,7 +3,11 @@
 //
 
 #ifndef ZADANIE4_Andy_LOGGER_ANDY_H
-#define ZADANIE4_Andy_LOGGER_ANDY_H
+#define
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 void    openLog(std::string fileName);
 void    saveLog(std::string msg);
