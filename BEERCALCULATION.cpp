@@ -10,6 +10,8 @@
 
 using namespace std;
 
+std::stringstream msg;
+
 std::string timeConverter(int sec) {
     string convertedTime{};
     int hours = sec/3600;
@@ -51,8 +53,8 @@ testData loadDataFromFile(string  path1, string  path2) {
 }
 void test_1()
 {
-    openLog("test_1_1.dat");
-    openLog("test_1_2.dat");
+    openLog("tests.txt");
+
 
     testData test_1_data;
     const string s1 = "test_1_1.dat";
@@ -61,9 +63,9 @@ void test_1()
     char val_2;
     int badBits{0};
     double BER_value;
-    test_1_data = loadDataFromFile(s1,s2);
-    size_t totalNumOfBits = test_1_data.data1.size() * 2* 8;
     clock_t time = clock();
+    test_1_data = loadDataFromFile(s1,s2);
+    size_t totalNumOfBits = test_1_data.data1.size()*2*8;
     for (int i = 0; i <  test_1_data.data1.size(); ++i) {
         val_1 = test_1_data.data1.at(i);
         val_2 = test_1_data.data2[i];
@@ -78,12 +80,18 @@ void test_1()
     cout <<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
     cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout  <<"========================================================================="<<endl;
-    closeLog();
+    msg<<"Test 1 performed"<<endl;
+    msg<<"Number of bad bits in test 1 files : "<< badBits<<endl;
+    msg<<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
+    msg<<"End of log for test 1"<<endl;
+    msg<<"==================================="<<endl;
+    saveLog(msg.str());
+    closeLog;
 }
 void test_2()
 {
-    openLog("test_2_1.dat");
-    openLog("test_2_2.dat");
+    openLog("tests.txt");
+
     testData test_2_data;
     const string s3 = "test_2_1.dat";
     const string s4 = "test_2_2.dat";
@@ -107,12 +115,17 @@ void test_2()
     cout <<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
     cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout << "========================================================================="<<endl;
+    msg<<"Test 2 performed"<<endl;
+    msg<<"Number of bad bits in test 2 files : "<< badBits<<endl;
+    msg<<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
+    msg<<"End of log for test 2"<<endl;
+    msg<<"================================================"<<endl;
+    saveLog(msg.str());
     closeLog();
 }
 void test_3()
 {
-    openLog("test_3_1.dat");
-    openLog("test_3_2.dat");
+    openLog("tests.txt");
     testData test_3_data;
     const string s5 = "test_3_1.dat";
     const string s6 = "test_3_2.dat";
@@ -137,6 +150,12 @@ void test_3()
     cout <<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
     cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout << "========================================================================="<<endl;
-    closeLog();
+    msg<<"Test 3 performed"<<endl;
+    msg<<"Number of bad bits in test 3 files : "<< badBits<<endl;
+    msg<<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
+    msg<<"End of log for test 3"<<endl;
+    msg<<"======================================================="<<endl;
+    saveLog(msg.str());
+    closeLog;
 }
 
