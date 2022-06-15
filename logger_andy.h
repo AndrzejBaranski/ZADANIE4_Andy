@@ -11,6 +11,6 @@
 
 void    openLog(std::string fileName);
 void    saveLog(std::string msg);
-void    closeLog(void);
+void    closeLog();
 
 #endif ZADANIE4_Andy_LOGGER_ANDY_H
